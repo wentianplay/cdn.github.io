@@ -1,0 +1,394 @@
+<!--
+角色名 苏天彬
+（英文）Su TianBIN
+（假名）ソテンアキラ
+（罗马字拼写） Soten Akira
+
+• 身高：175cm
+• 体重：56kg
+• 性别：男
+• 种族：蛇妖
+• 体型：少年
+• 头发：白色
+• 瞳色：绿色【竖瞳(裂隙状)】
+• 生日：2008年2月29日
+• 身体特征：已经化形为人形，无任何关于蛇的特征，唯独只有眼睛有蛇的竖瞳(裂隙状)的特征。
+• 日常穿着：上身内穿纯白色的天蚕丝内衬，外穿翠绿色的棉麻感斜襟道袍（少量红、金色的装饰）
+下身穿着白色短裤(四分短裤)、白色长筒袜(罗口处为绿色)、碧绿色的运动鞋（白、红、金色为配色）
+
+【性格】
+・幼稚、天真无邪、好奇、浪漫主义、幻想主义
+・喜欢喝奶、喝茶、钓鱼
+・自来熟……（多疑）
+-->
+<meta http-equiv="refresh" content="13;url=./index.txt">
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>苏天彬 | 文天玩WenTianPlay</title>
+    <link rel="shortcut icon" href="http://www.WenTianPlay.net/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #00a1d6 0%, #0084b4 100%);
+            color: white;
+            padding: 15px 0;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .skin-left-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .skin-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #00a1d6;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .skin-preview-container {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .skin-preview {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skin-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .skin-owner {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background-color: #00a1d6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0084b4;
+        }
+        
+        .btn-secondary {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .skin-info {
+            flex: 2;
+            min-width: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .info-section {
+            margin-bottom: 25px;
+        }
+        
+        .info-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #00a1d6;
+            border-left: 4px solid #00a1d6;
+            padding-left: 10px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .info-value {
+            font-size: 16px;
+        }
+        
+        .notice {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .notice p {
+            margin: 5px 0;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-content {
+                gap: 20px;
+            }
+            
+            .skin-left-section,
+            .skin-info {
+                width: 100%;
+                min-width: 100%;
+            }
+            
+            .skin-preview-container {
+                max-width: 250px;
+            }
+            
+            .skin-preview {
+                height: 250px;
+            }
+            
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo"><a href="http://oc.bintian.net/index.txt" target="_blank">文天玩WenTianPlay</a></div>
+                <div class="nav-links">
+                    <a href="http://official.wentianplay.com/" target="_blank">文天玩</a>
+                    <a href="http://www.qidian.com/book/1041003789/" target="_blank">小说</a>
+                    <a href="./index.txt" target="_blank">文字设</a>
+                </div>
+            </div>
+        </header>
+        <div class="main-content">
+            <div class="skin-left-section">
+                <h2 class="skin-title">苏天彬</h2>
+                <div class="skin-preview-container">
+                    <div class="skin-preview">
+                        <img src="./index.webp" alt="苏天彬Minecraft皮肤" class="skin-image" onerror="this.src='https://via.placeholder.com/430x437?text=Skin+Preview'">
+                    </div>
+                    <p class="skin-owner">文天玩WenTianPlay发起创始人</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="window.location.href='http://littleskin.cn/skinlib/show/467128'">
+                        添加至衣柜
+                    </button>
+                </div>
+            </div>
+            <div class="skin-info">
+                <div class="info-section">
+                    <h3>材质描述</h3>
+                    <p>价格：198元定制の私人皮</p>
+                    <p>版权所有：文天玩WenTianPlay</p>
+                    <p>官方网站：https://official.wentianplay.com/</p>
+                    <div class="notice">
+                        <p>此为"BiliBili苏天彬"专用私人皮，仅供试玩使用!!!</p>
+                        <p>未经许可·禁止二创搬运抄袭以及商业用途·违者必究</p>
+                    </div>
+                </div>
+                <div class="info-section">
+                    <h3>详细信息</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">名称</span>
+                            <span class="info-value">BiliBili苏天彬-文天玩WenTianPlay创始人</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">适用模型</span>
+                            <span class="info-value">Steve</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">TID</span>
+                            <span class="info-value">467128</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">文件大小</span>
+                            <span class="info-value">3 KB</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">上传者</span>
+                            <span class="info-value">苏天彬</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">材质来源</span>
+                            <span class="info-value">原创</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">上传日期</span>
+                            <span class="info-value">2024-06-23 15:52:06</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024.6.23 文天玩WenTianPlay</p>
+        </div>
+    </div>
+</body>
+</html>
