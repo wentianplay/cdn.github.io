@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TianBIN Server</title>
+</head>
+<body>
+<script>
+const CONFIGURED_DOMAIN = "api.TianBIN.org";
+const VALIDATION_ENDPOINT = "https://api.wentianplay.com/api/api.json";
+const SUCCESS_REDIRECT = "https://TianBIN.org";
+const FAILURE_REDIRECT = "https://TianBIN.org";
+const FAILURE_DELAY = 8000; 
+
+function show404Page() {
+    document.body.innerHTML = `
+        <center><h1>404 Not Found</h1></center>
+        <hr><center>nginx/1.16.1</center>
+        <!-- a padding to disable MSIE and Chrome friendly error page -->
+        <!-- a padding to disable MSIE and Chrome friendly error page -->
+        <!-- a padding to disable MSIE and Chrome friendly error page -->
+        <!-- a padding to disable MSIE and Chrome friendly error page -->
+        <!-- a padding to disable MSIE and Chrome friendly error page -->
+        <!-- a padding to disable MSIE and Chrome friendly error page -->
+    `;
+    document.title = "404 Not Found";
+
+
+    setTimeout(() => {
+        window.location.href = FAILURE_REDIRECT;
+    }, FAILURE_DELAY);
+}
+
+function performDomainAuthentication() {
+    const currentHostname = window.location.hostname;
+
+    if (currentHostname !== CONFIGURED_DOMAIN) {
+        show404Page();
+        return;
+    }
+
+    fetch(VALIDATION_ENDPOINT, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Domain-Verification': 'true'
+        },
+        redirect: 'error'
+    })
+    .then(response => {
+        if (!response.ok) {
+            show404Page();
+            return Promise.reject('网络响应异常');
+        }
+        return response.json();
+    })
+    .then(validationData => {
+        const authorizedDomains = validationData.authorized_domains;
+        const securityLevel = validationData.security_level;
+
+        if (!Array.isArray(authorizedDomains) || securityLevel !== "government_grade") {
+            show404Page();
+            return;
+        }
+
+        const isDomainAuthorized = authorizedDomains.some(domain => {
+            return domain === currentHostname;
+        });
+
+        if (isDomainAuthorized) {
+            const verificationTimestamp = new Date(validationData.verification_timestamp);
+            const currentTime = new Date();
+            const timeDifference = Math.abs(currentTime - verificationTimestamp);
+
+            if (timeDifference > 86400000) {
+                show404Page();
+                return;
+            }
+
+
+            window.location.href = SUCCESS_REDIRECT;
+        } else {
+            show404Page();
+        }
+    })
+    .catch(error => {
+        show404Page();
+    });
+}
+
+window.addEventListener('DOMContentLoaded', performDomainAuthentication);
+</script>
+</body>
+</html>
