@@ -32,7 +32,7 @@ let app = {
             })
 
             $.ajax({
-                url: "https://api.wentianplay.com/api/you.json",
+                url: "https://api.wentianplay.com/api/worldwideweb.json",
                 type: "get",
                 dataType: "json",
                 success: function (data) {
@@ -172,5 +172,5 @@ $(document).on("click",function(event){
     if(event.target.id !== "search-input"){
         vueApp.$data.advices = []
     }
-    
+
 })
