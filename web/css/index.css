@@ -40,7 +40,7 @@ html {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("https://api.wentianplays.com/api/web/nav/web.jpg");
+    background-image: url("https://api.wentianplays.com/cdn/index.jpg");
     background-size: cover;
     z-index: -1;
 }
