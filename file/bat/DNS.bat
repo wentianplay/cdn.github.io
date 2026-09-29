@@ -21,7 +21,6 @@ echo.
 echo Flush DNS...
 ipconfig /flushdns
 echo.
-echo TCP Optimize...
 echo Optimizing TCP...
 netsh int tcp set global autotuninglevel=normal
 netsh int tcp set global rss=enabled
@@ -30,6 +29,7 @@ netsh int tcp set global ecncapability=disabled
 netsh int tcp set global timestamps=disabled
 netsh int tcp set global fastopen=enabled
 netsh int tcp set supplemental template=internet congestionprovider=cubic
+echo Optimizing TCP OK
 echo.
 echo Setting IPv4 + IPv6 DNS...
 powershell -NoProfile -Command "Set-DnsClientServerAddress -InterfaceIndex %ADAPTER_IDX% -ServerAddresses '1.1.1.1','8.8.8.8','2606:4700:4700::1111','2001:4860:4860::8888' -ErrorAction SilentlyContinue"
