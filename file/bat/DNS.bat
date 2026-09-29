@@ -76,7 +76,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Con
 reg add "HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v BranchReadinessLevel /t REG_DWORD /d 0 /f >nul 2>&1
 reg add "HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v AllowAutoWindowsUpdateDownloadOverMeteredNetwork /t REG_DWORD /d 0 /f >nul 2>&1
 echo [OK] Update / P2P limited
-if not "%IDX%"=="0" powershell -NoProfile -Command "Set-DnsClientServerAddress -InterfaceIndex %IDX% -ServerAddresses @('223.5.5.5','119.29.29.29','2400:3200::1','2606:4700:4700::1111') -ErrorAction SilentlyContinue" >nul 2>&1
+if not "%IDX%"=="0" powershell -NoProfile -Command "Set-DnsClientServerAddress -InterfaceIndex %IDX% -ServerAddresses @('223.5.5.5','119.29.29.29','2400:3200::1','2402:4e00::') -ErrorAction SilentlyContinue" >nul 2>&1
 echo [OK] DNS set
 powershell -NoProfile -Command "Get-NetAdapter | Where-Object { $_.Status -eq 'Up' } | ForEach-Object { try{ Set-NetConnectionProfile -InterfaceIndex $_.InterfaceIndex -NetworkCategory Private -ErrorAction SilentlyContinue }catch{} }" >nul 2>&1
 powershell -NoProfile -Command "Get-NetAdapter | Where-Object { $_.Status -eq 'Up' } | ForEach-Object { try{ Set-ItemProperty -Path ('HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\DefaultMediaCost\' ) -Name (Get-NetConnectionProfile -InterfaceIndex $_.InterfaceIndex -ErrorAction SilentlyContinue | ForEach-Object { if($_.InterfaceAlias-like '*Ethernet*'){'Ethernet'}elseif($_.InterfaceAlias-like '*Wi-Fi*' -or $_.InterfaceAlias-like '*WLAN*'){'Wifi'}else{$null} }) -Value 2 -ErrorAction SilentlyContinue }catch{} }" >nul 2>&1
@@ -84,7 +84,7 @@ echo [OK] Network category / metered
 echo.
 echo === DONE ===
 echo IPv4 DNS: 223.5.5.5 / 119.29.29.29
-echo IPv6 DNS: 2400:3200::1 / 2606:4700:4700::1111
+echo IPv6 DNS: 2400:3200::1 / 2402:4e00::
 echo Profile: %BW_MODE%
 echo [OK] wentianyo.com
 echo [OK] wentianwan.com
