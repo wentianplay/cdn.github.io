@@ -41,6 +41,6 @@ echo IPv6 DNS: 2606:4700:4700::1111 / 2001:4860:4860::8888
 echo.
 echo QQ:2185006560
 echo mail:Su@TianBIN.org
-echo Copyright 2007 - 2026
-echo TianBIN.NET All Rights Reserved. 
+echo Copyright 2007 - 2026 TianBIN.NET  All Rights Reserved. 
 echo.
+pause
