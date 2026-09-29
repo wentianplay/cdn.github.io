@@ -1,7 +1,6 @@
 @echo off
 chcp 65001 >nul
 setlocal EnableDelayedExpansion
-echo === NETWORK TUNING START ===
 echo.
 fltmc >nul 2>&1 || (echo Run as Admin! & pause & exit /b 1)
 echo [OK] Admin
@@ -87,6 +86,12 @@ echo === DONE ===
 echo IPv4 DNS: 1.1.1.1 / 8.8.8.8
 echo IPv6 DNS: 2606:4700:4700::1111 / 2001:4860:4860::8888
 echo Profile: %BW_MODE%
+echo [OK] wentianyo.com
+echo [OK] wentianwan.com
+echo [OK] wentianplay.com
+echo [OK] tianbin.org
+echo [OK] tianbin.com
+echo [OK] tianbin.net
 echo.
 echo QQ:2185006560
 echo mail:Su@TianBIN.org
